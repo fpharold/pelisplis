@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PelisPlis</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #0f1115;
+      color: #e0f7fa;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #12161c;
+      padding: 10px 20px;
+    }
+    .logo img {
+      height: 50px;
+    }
+    .search-container {
+      flex-grow: 1;
+      margin: 0 30px;
+    }
+    .search-container input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+    }
+    .main-container {
+      padding: 20px;
+    }
+    .category-section {
+      margin-bottom: 30px;
+    }
+    .category-section h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #4dd0e1;
+      border-bottom: 2px solid #006064;
+      padding-bottom: 5px;
+    }
+    .thumbnails-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+    }
+    .thumbnail {
+      background-color: #1c1c1c;
+      border: 1px solid #004d40;
+      border-radius: 8px;
+      min-width: 150px;
+      width: 150px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .thumbnail .title {
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 5px;
+      color: #80deea;
+    }
+    #no-results {
+      text-align: center;
+      margin-top: 30px;
+      color: #b2ebf2;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-bar">
+    <div class="logo">
+      <img src="https://i.imgur.com/edh2vyI.png" alt="PelisPlis Logo">
+    </div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search movies...">
+    </div>
+  </header>
+
+  <div class="main-container">
+    <h1>Main Catalog</h1>
+
+    <section class="category-section">
+      <h2>New Releases</h2>
+      <div class="thumbnails-scroll-container">
+        <a href="gladiator.html" class="thumbnail" data-keywords="gladiator 2 gladiator ii gladiador 2 gladiador ii">
+          <img src="https://i.imgur.com/yxssnCy.png" alt="Gladiator II">
+          <p class="title">Gladiator II</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Action</h2>
+      <div class="thumbnails-scroll-container">
+        <a href="gladiator.html" class="thumbnail" data-keywords="gladiator 2 gladiator ii gladiador 2 gladiador ii">
+          <img src="https://i.imgur.com/yxssnCy.png" alt="Gladiator II">
+          <p class="title">Gladiator II</p>
+        </a>
+      </div>
+    </section>
+
+    <div id="no-results">🙈 Oops! We couldn't find what you're looking for...</div>
+  </div>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const value = this.value.toLowerCase();
+      const items = document.querySelectorAll('.thumbnail');
+      let matches = 0;
+      items.forEach(el => {
+        const title = el.querySelector('.title').textContent.toLowerCase();
+        const keywords = el.dataset.keywords;
+        const match = title.includes(value) || keywords.includes(value);
+        el.style.display = match ? 'block' : 'none';
+        if (match) matches++;
+      });
+      document.getElementById('no-results').style.display = matches ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>
