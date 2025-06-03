@@ -136,7 +136,7 @@
         </a>
         <a href="sonic3.html" class="thumbnail" data-keywords="sonic 3 sonic3 sonic la película">
           <div class="image-container">
-           <img src="https://i.imgur.com/Yfc5mly.png" alt="Sonic 3">
+            <img src="https://i.imgur.com/Yfc5mly.png" alt="Sonic 3">
           </div>
           <p class="title">Sonic 3</p>
         </a>
@@ -154,7 +154,7 @@
         </a>
         <a href="sonic3.html" class="thumbnail" data-keywords="sonic 3 sonic3 sonic la película">
           <div class="image-container">
-           <img src="https://i.imgur.com/Yfc5mly.png" alt="Sonic 3">
+            <img src="https://i.imgur.com/Yfc5mly.png" alt="Sonic 3">
           </div>
           <p class="title">Sonic 3</p>
         </a>
@@ -178,7 +178,17 @@
       });
       document.getElementById('no-results').style.display = matches ? 'none' : 'block';
     });
+
+    // Adsterra popunder script (se ejecuta solo una vez por visitante)
+    document.addEventListener('DOMContentLoaded', function () {
+      let triggered = false;
+      document.body.addEventListener('click', function () {
+        if (!triggered) {
+          triggered = true;
+          window.open('https://www.profitableratecpm.com/q7bsyffxk?key=50e00ca3aac1956a3bec5deaea488597', '_blank');
+        }
+      });
+    });
   </script>
 </body>
 </html>
-
