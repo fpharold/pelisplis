@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Django</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #181A20;
+      color: #AEEFFF;
+    }
+    header {
+      background-color: #181A20;
+      color: #AEEFFF;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+    header img {
+      height: 50px;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 40px auto 0 auto;
+      max-width: 1100px;
+      gap: 40px;
+      background: #23242a;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 30px 20px;
+    }
+    .miniatura {
+      flex: 0 0 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .miniatura img {
+      width: 200px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .categoria {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 15px;
+      background: #263238;
+      color: #B3E5FC;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .contenido-principal {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+    }
+    h1 {
+      margin-top: 0;
+      color: #E0F7FA;
+    }
+    .reproductor {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 16/9;
+      margin-top: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+      background: #181A20;
+    }
+    .publi-lateral {
+      flex: 0 0 170px;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 160px;
+      max-width: 170px;
+    }
+    a, a:visited {
+      color: #B3E5FC;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ffffff;
+    }
+    .volver {
+      display: block;
+      margin: 30px auto 0 auto;
+      max-width: 120px;
+      padding: 10px 0;
+      background: #263238;
+      color: #B3E5FC;
+      border-radius: 20px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .volver:hover {
+      background: #37474f;
+      color: #fff;
+    }
+    @media (max-width: 950px) {
+      .container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .publi-lateral {
+        flex-direction: row;
+        margin: 20px 0 0 0;
+        max-width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="https://i.imgur.com/H3jSPsC.png" alt="Logo" /></a>
+  </header>
+  <div class="container">
+    <div class="miniatura">
+      <img src="https://i.imgur.com/a/rpjl01a.jpg" alt="Django" />
+      <span class="categoria">Acción,Drama</span>
+    </div>
+    <div class="contenido-principal">
+      <h1>Django</h1>
+      <div class="reproductor">
+        <iframe width="100%" height="100%" src="https://drive.google.com/file/d/1DbjShhx7tmpyuLUi0fowjb8kv4tMmDQk/preview
+" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="publi-lateral">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : 'c4f9b37714f93f0819e96b586befe257',
+          'format' : 'iframe',
+          'height' : 300,
+          'width' : 160,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/c4f9b37714f93f0819e96b586befe257/invoke.js"></script>
+    </div>
+  </div>
+  <a href="index.html" class="volver">← Volver</a>
+</body>
+</html>
