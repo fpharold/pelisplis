@@ -134,6 +134,12 @@
           </div>
           <p class="title">Gladiador II</p>
         </a>
+        <a href="sonic3.html" class="thumbnail" data-keywords="sonic 3 sonic3 sonic la película">
+          <div class="image-container">
+            <img src="https://i.imgur.com/TUe5Njb.png" alt="Sonic 3">
+          </div>
+          <p class="title">Sonic 3</p>
+        </a>
       </div>
     </section>
 
@@ -146,35 +152,33 @@
           </div>
           <p class="title">Gladiador II</p>
         </a>
+        <a href="sonic3.html" class="thumbnail" data-keywords="sonic 3 sonic3 sonic la película">
+          <div class="image-container">
+            <img src="https://i.imgur.com/TUe5Njb.png" alt="Sonic 3">
+          </div>
+          <p class="title">Sonic 3</p>
+        </a>
       </div>
     </section>
 
     <div id="no-results">🙈 ¡Upps! No encontramos lo que buscas...</div>
   </div>
-<script>
-  // Función para quitar acentos y pasar a minúsculas
-  function normalize(str) {
-    return str
-      .normalize("NFD") // separa letras de sus acentos
-      .replace(/[\u0300-\u036f]/g, "") // elimina los acentos
-      .toLowerCase();
-  }
 
-  document.getElementById('searchInput').addEventListener('input', function () {
-    const value = normalize(this.value);
-    const items = document.querySelectorAll('.thumbnail');
-    let matches = 0;
-    items.forEach(el => {
-      const title = normalize(el.querySelector('.title').textContent);
-      const keywords = normalize(el.dataset.keywords);
-      const match = title.includes(value) || keywords.includes(value);
-      el.style.display = match ? 'block' : 'none';
-      if (match) matches++;
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const value = this.value.toLowerCase();
+      const items = document.querySelectorAll('.thumbnail');
+      let matches = 0;
+      items.forEach(el => {
+        const title = el.querySelector('.title').textContent.toLowerCase();
+        const keywords = el.dataset.keywords;
+        const match = title.includes(value) || keywords.includes(value);
+        el.style.display = match ? 'block' : 'none';
+        if (match) matches++;
+      });
+      document.getElementById('no-results').style.display = matches ? 'none' : 'block';
     });
-    document.getElementById('no-results').style.display = matches ? 'none' : 'block';
-  });
-</script>
+  </script>
 </body>
 </html>
-</body>
-</html>
+
