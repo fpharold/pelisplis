@@ -22,7 +22,7 @@
       max-width: 800px;
       margin: 0 auto;
     }
-    iframe {
+    iframe.video {
       width: 100%;
       height: 450px;
       border: none;
@@ -32,13 +32,71 @@
       text-align: center;
       color: #00e5ff;
     }
+
+    /* Report Button & Popup */
+    .report-button {
+      background-color: #ff5252;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 30px auto;
+      display: block;
+    }
+    .popup-form {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 600px;
+      height: 80%;
+      background-color: #0f1115;
+      border: 2px solid #00e5ff;
+      border-radius: 10px;
+      z-index: 1000;
+      padding: 10px;
+      box-shadow: 0 0 20px #00e5ff;
+    }
+    .popup-close {
+      text-align: right;
+    }
+    .popup-close button {
+      background: none;
+      color: #00e5ff;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .popup-form iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
   <a href="index.html" class="back-link">&larr; Volver al inicio</a>
   <h1>Sonic 3 (2024)</h1>
   <div class="video-container">
-    <iframe src="https://streamtape.com/e/j6Wm4PqVaDCDdl/" allowfullscreen allow="autoplay"></iframe>
+    <iframe class="video" src="https://streamtape.com/e/j6Wm4PqVaDCDdl/" allowfullscreen allow="autoplay"></iframe>
+  </div>
+
+  <button class="report-button" onclick="document.getElementById('popupForm').style.display='block'">
+    ⚠️ Reportar episodio caído
+  </button>
+
+  <!-- Popup Modal -->
+  <div class="popup-form" id="popupForm">
+    <div class="popup-close">
+      <button onclick="document.getElementById('popupForm').style.display='none'">×</button>
+    </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfn_8JsqkZtxpGrTuiEVPd2ne9wfTNihXXZSsx1Yy_ftqE3Zg/viewform?embedded=true" allowfullscreen></iframe>
   </div>
 </body>
 </html>
+
