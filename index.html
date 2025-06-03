@@ -151,27 +151,30 @@
 
     <div id="no-results">🙈 ¡Upps! No encontramos lo que buscas...</div>
   </div>
-
+<script>
   // Función para quitar acentos y pasar a minúsculas
-function normalize(str) {
-  return str
-    .normalize("NFD") // separa letras de sus acentos
-    .replace(/[\u0300-\u036f]/g, "") // elimina los acentos
-    .toLowerCase();
-}
+  function normalize(str) {
+    return str
+      .normalize("NFD") // separa letras de sus acentos
+      .replace(/[\u0300-\u036f]/g, "") // elimina los acentos
+      .toLowerCase();
+  }
 
-document.getElementById('searchInput').addEventListener('input', function () {
-  const value = normalize(this.value);
-  const items = document.querySelectorAll('.thumbnail');
-  let matches = 0;
-  items.forEach(el => {
-    const title = normalize(el.querySelector('.title').textContent);
-    const keywords = normalize(el.dataset.keywords);
-    const match = title.includes(value) || keywords.includes(value);
-    el.style.display = match ? 'block' : 'none';
-    if (match) matches++;
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const value = normalize(this.value);
+    const items = document.querySelectorAll('.thumbnail');
+    let matches = 0;
+    items.forEach(el => {
+      const title = normalize(el.querySelector('.title').textContent);
+      const keywords = normalize(el.dataset.keywords);
+      const match = title.includes(value) || keywords.includes(value);
+      el.style.display = match ? 'block' : 'none';
+      if (match) matches++;
+    });
+    document.getElementById('no-results').style.display = matches ? 'none' : 'block';
   });
-  document.getElementById('no-results').style.display = matches ? 'none' : 'block';
-});
+</script>
+</body>
+</html>
 </body>
 </html>
