@@ -7,16 +7,18 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: #f2f2f2;
+      background-color: #181A20;   /* Fondo oscuro */
+      color: #AEEFFF;              /* Azul muy claro para el texto */
     }
 
     header {
-      background-color: #222;
-      color: white;
+      background-color: #181A20;   /* Igual que el fondo */
+      color: #AEEFFF;
       padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     }
 
     header img {
@@ -24,17 +26,25 @@
     }
 
     .search {
-      background-color: white;
+      background-color: #23242a;   /* Oscuro */
+      color: #AEEFFF;
       border-radius: 20px;
       padding: 5px 15px;
       border: none;
       font-size: 14px;
       width: 200px;
+      outline: none;
+    }
+
+    .search::placeholder {
+      color: #89e0ff;              /* Azul claro */
+      opacity: 1;
     }
 
     h1 {
       text-align: center;
       margin: 20px 0;
+      color: #E0F7FA;              /* Más claro para títulos */
     }
 
     .peliculas {
@@ -45,9 +55,9 @@
     }
 
     .card {
-      background: white;
+      background: #23242a;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
       margin: 10px;
       width: 200px;
       text-align: center;
@@ -66,6 +76,16 @@
     .card p {
       padding: 10px;
       font-weight: bold;
+      color: #AEEFFF;
+    }
+
+    a, a:visited {
+      color: #B3E5FC;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffffff;
     }
 
     .hidden {
@@ -86,28 +106,28 @@
 
     <div class="card" data-title="Sonic 3">
       <a href="Sonic3.html">
-        <img src="https://imgur.com/Yfc5mly" alt="Sonic 3" />
+        <img src="https://imgur.com/Yfc5mly.jpg" alt="Sonic 3" />
         <p>Sonic 3</p>
       </a>
     </div>
 
     <div class="card" data-title="47 Ronin">
       <a href="47Ronin.html">
-        <img src="https://imgur.com/U8xN4lU" alt="47 Ronin" />
+        <img src="https://i.imgur.com/U8xN4lU.jpg" alt="47 Ronin" />
         <p>47 Ronin</p>
       </a>
     </div>
 
     <div class="card" data-title="El Ilusionista">
       <a href="El-Ilusionista.html">
-        <img src="https://imgur.com/K80twcy" alt="El Ilusionista" />
+        <img src="https://i.imgur.com/K80twcy.jpg" alt="El Ilusionista" />
         <p>El Ilusionista</p>
       </a>
     </div>
 
     <div class="card" data-title="Uncharted">
       <a href="Uncharted.html">
-        <img src="https://imgur.com/xk6QS3U" alt="Uncharted" />
+        <img src="https://i.imgur.com/xk6QS3U.jpg" alt="Uncharted" />
         <p>Uncharted</p>
       </a>
     </div>
@@ -128,4 +148,3 @@
   </script>
 </body>
 </html>
-
